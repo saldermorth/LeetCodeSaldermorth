@@ -13,14 +13,22 @@
             int amountOfRightType = 0;
             char leftTypeToCheck = ' ';
             Dictionary<int, char >  indexSymbol = new Dictionary<int , char >();
-
+            //Use dictionar for whole string?? look up index perhaps
             for (int i = 0; i < s.Length; i++)
             {
                //If we se a right type without prevously seeing a left type return
                 if (s[i] == '(')
                 {
                     indexSymbol.Add(i, s[i]);
-                    // Start search of ) in loop
+                    // Start search of ) in loop 
+                    for (int j = 1; j < s.Length; j++)
+                    {
+                        if (s[j] == ')')
+                        {
+                            indexSymbol.Add(j, s[j]);
+                            //
+                        }
+                    }
                    
                 }
                 if (s[i] == '[')
